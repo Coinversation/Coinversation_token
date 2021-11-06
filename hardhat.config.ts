@@ -43,13 +43,13 @@ const config: HardhatUserConfig = {
     mainnet: {
       url: "https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161",
       chainId: 1,
-      gasPrice: 80000000000,
+      gasPrice: 78000000000,
       accounts: {mnemonic: mnemonic}
     },
     ropsten: {
       url: "https://ropsten.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161",
       chainId: 3,
-      gasPrice: 80000000000,
+      gasPrice: 78000000000,
       accounts: {mnemonic: mnemonic}
     },
   },

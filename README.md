@@ -1,5 +1,5 @@
 # Coinversation Token Contract
 Ethereum address
-mainnet: 0x72e86269b919Db5bDbF61cB1DeCfD6d14feC4D7F
+mainnet: 0xa5e48a6E56e164907263e901B98D9b11CCB46C47
 ropsten: 0x1CeE94a11eAf390B67Aa346E9Dda3019DfaD4f6A
 

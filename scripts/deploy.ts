@@ -7,7 +7,7 @@ import { ethers } from "hardhat";
 import hre from "hardhat";
 
 const ctoAddress_Ropsten = "0x1CeE94a11eAf390B67Aa346E9Dda3019DfaD4f6A";
-const ctoAddress_Mainnet = "0x72e86269b919Db5bDbF61cB1DeCfD6d14feC4D7F";
+const ctoAddress_Mainnet = "0xa5e48a6E56e164907263e901B98D9b11CCB46C47";
 
 async function main() {
   // Hardhat always runs the compile task when running scripts with its command
@@ -18,20 +18,20 @@ async function main() {
   // await hre.run('compile');
 
   // We get the contract to deploy
-  // const CoinversationToken = await ethers.getContractFactory("CoinversationToken");
-  // const cto = await CoinversationToken.deploy(13566600);
+  const CoinversationToken = await ethers.getContractFactory("CoinversationToken");
+  const cto = await CoinversationToken.deploy(13566600);
 
-  // await cto.deployed();
+  await cto.deployed();
 
-  // console.log("CTO deployed to:", cto.address);
+  console.log("CTO deployed to:", cto.address);
 
   // await sleep(60000);
 
-  await hre.run("verify:verify", {
-    address: ctoAddress_Mainnet,
-    contract: "contracts/CoinversationToken.sol:CoinversationToken",
-    constructorArguments: [13566600]
-  });
+  // await hre.run("verify:verify", {
+  //   address: ctoAddress_Mainnet,
+  //   contract: "contracts/CoinversationToken.sol:CoinversationToken",
+  //   constructorArguments: [13566600]
+  // });
 }
 
 function sleep(ms:number) {
