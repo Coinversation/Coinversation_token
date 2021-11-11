@@ -18,20 +18,19 @@ async function main() {
   // await hre.run('compile');
 
   // We get the contract to deploy
-  const CoinversationToken = await ethers.getContractFactory("CoinversationToken");
-  const cto = await CoinversationToken.deploy(13566600);
+  const CTODistribution = await ethers.getContractFactory("CTODistribution");
+  const cto = await CTODistribution.deploy();
 
   await cto.deployed();
 
   console.log("CTO deployed to:", cto.address);
 
-  // await sleep(60000);
+  await sleep(120000);
 
-  // await hre.run("verify:verify", {
-  //   address: ctoAddress_Mainnet,
-  //   contract: "contracts/CoinversationToken.sol:CoinversationToken",
-  //   constructorArguments: [13566600]
-  // });
+  await hre.run("verify:verify", {
+    address: cto.address,
+    contract: "contracts/CTODistribution.sol:CTODistribution"
+  });
 }
 
 function sleep(ms:number) {
